@@ -1,6 +1,6 @@
 // -*- mode: adoc -*-
 = About us
-:page-permalink: about.html
+:page-permalink: /about/
 :dotlessi: &#x131;
 :ccedilla: &#231;
 
