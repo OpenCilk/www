@@ -16,7 +16,7 @@
 title: Cilk Hub
 email: cilk@mit.edu
 description: 'Cilk Hub maintains recent developments with the Cilk multithreaded programming technology.'
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: /newsite # the subpath of your site, e.g. /blog
 url: http://cilk.mit.edu # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
@@ -80,11 +80,12 @@ defaults:
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - Makefile
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
