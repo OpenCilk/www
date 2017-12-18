@@ -1,0 +1,17 @@
+---
+breadcrumb: true
+tags:
+  - tapir
+  - papers
+---
+= Tapir wins best paper at PPoPP!
+:page-layout: page
+:page-subheadline: Tapir
+:page-teaser: The paper Tapir: Embedding Fork-Join Parallelism into LLVM's Intermediate Representation wins best paper at PPoPP '17!
+:page-categories: tapir
+:date: 2017-02-08
+
+Congratulations to the authors, Tao B. Schardl, William S. Moses, and
+Charles E. Leiserson!
+
+You can access the paper link:https://doi.org/10.1145/3018743.3018758[here].

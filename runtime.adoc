@@ -1,0 +1,43 @@
+// -*- mode: adoc -*-
+= The Cilk runtime system
+
+The Cilk concurrency platform uses a scheduler that decides at runtime
+how to schedule and execute logically parallel tasks on parallel
+processors.  The Cilk scheduler offers several benefits that allow
+Cilk programs to execute efficiently in a variety of environments:
+
+- The Cilk scheduler executes a Cilk computation in a provably
+  efficient manner.
+- In practice, the Cilk scheduler employs whatever parallel processors
+  happen to be available at runtime, even in multiprogrammed
+  environments.
+- The Cilk scheduler ensures that the parallel performance of a Cilk
+  computation is *_composable_*: if two Cilk computations are executed
+  simultaneously on the same system, then these computations will not
+  oversubscribe the parallel processors on the system.
+
+{underConstruction}
+
+.What is parallelism?
+
+The parallelism of a Cilk program can be measured quantitatively in
+terms of two performance measures: work and span.  Conceptually, for a
+deterministic parallel program, the *_work_* of a computation, denoted
+latexmath:[T_1], corresponds to the running time of that program on a
+single processor.  Meanwhile the *_span_* of a computation, denoted
+latexmath:[T_\infty], corresponds to the running time of that program
+on a hypothetical machine with an infinite number of processors.  The
+*_parallelism_* of a computation is the ratio of its work divided by
+its span, that is, latexmath:[T_1/T_\infty].  The parallelism
+identifies to the maximum number of parallel processors that the
+program could use to get parallel speedup.
+
+The Cilk scheduler provides a mathematical guarantee to execute a Cilk
+computation with work latexmath:[T_1] and span latexmath:[T_\infty] on
+latexmath:[P] processors in time latexmath:[T_P \leq T_1/P +
+O(T_\infty)].  Using this scheduler, if the Cilk computation exhibits
+ample parallelism -- where latexmath:[P \ll T_1/T_\infty] -- then the
+Cilk scheduler executes the computation with *_linear speedup_*,
+meaning that the computation runs on latexmath:[P] processors in time
+latexmath:[T_P \approx T_1/P].
+

@@ -1,0 +1,15 @@
+---
+breadcrumb: true
+tags:
+  - tapir
+---
+= Tapir/LLVM version 1.0-3
+:page-layout: page
+:page-subheadline: Tapir
+:page-teaser: New version of Tapir/LLVM available.
+:page-categories: tapir
+:date: 2017-12-13
+
+Version 1.0-3 of the Tapir/LLVM compiler for Cilk is available for
+  link:/download/[download].
+

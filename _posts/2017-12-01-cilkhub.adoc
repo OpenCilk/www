@@ -1,0 +1,17 @@
+---
+breadcrumb: true
+tags:
+  - cilkhub
+---
+= Cilk Hub taking on Cilk developments
+:page-layout: page
+:page-subheadline: Cilk Hub
+:page-teaser: Cilk Hub is taking on developments with Cilk.
+:page-categories: cilkhub
+:date: 2017-12-01
+
+In light of
+link:https://software.intel.com/en-us/articles/migrate-your-application-to-use-openmp-or-intelr-tbb-instead-of-intelr-cilktm-plus[Intel's
+recent announcement] that they would no longer maintain
+link:https://www.cilkplus.org/[Intel Cilk Plus], Cilk Hub is taking on
+developments with Cilk.

@@ -1,0 +1,38 @@
+// -*- mode: adoc -*-
+= Compiling and running Cilk
+
+Compiling a Cilk program is similar to compiling an ordinary C or
+{cpp} program.  To compile a Cilk program using Tapir/LLVM, add the
+`-fcilkplus` flag to the `clang` or `clang++` command you would use to
+compile and link an ordinary serial program.  When run, the resulting
+executable will use the Cilk runtime system to execute in parallel on
+whatever parallel processors are available on the machine.
+
+{underConstruction}
+
+== Testing for determinism
+
+We recommend checking your Cilk program for race bugs to ensure that
+the program is correct.  The Tapir/LLVM compiler includes the Cilksan
+race detector for finding race bugs in Cilk programs in a provably
+good way.  To use Cilksan, compile and link your Cilk program with the
+additional flag `-fsanitize=cilk`, and then run it normally.
+
+Unlike many race detectors, Cilksan offers a _guarantee_ to find a
+race bug if one exists.  Cilksan executes a Cilk program serially, but
+tracks the logical parallelism between all executed instructions to
+determine when two instructions can race on a memory location.
+
+.Best practices
+
+In practice, memory errors from ordinary serial programming can create
+race bugs in Cilk programs.  The Tapir/LLVM compiler supports the
+https://github.com/google/sanitizers/wiki/AddressSanitizer[AddressSanitizer]
+tool in Clang/LLVM version 5 for finding memory errors.  To use
+AddressSanitizer, compile and link your Cilk program with the flag
+`-fsanitize=address`, and then run the executable on a single Cilk
+worker as follows:
+[source,console]
+----
+$ CILK_NWORKERS=1 ./my_cilk_program
+----

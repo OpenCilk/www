@@ -1,0 +1,43 @@
+// -*- mode: adoc -*-
+= The Cilk tool suite
+
+Cilk supports a suite of tools for analyzing Cilk programs.
+
+- The Cilksan determinacy-race detector can be used to regression-test
+  Cilk programs for determinism.
+- The Cilkscale scalability analyzer quantitatively measures the
+  parallelism of a Cilk program.
+
+Both Cilksan and Cilkscale are packaged with the Tapir/LLVM compiler.
+The Tapir/LLVM compiler also supports CSI, a framework that allows
+programmers to write dynamic-analysis tools that use compiler
+instrumentation without modifying the compiler.
+
+{underConstruction}
+
+== The Cilksan determinacy-race detector
+
+Cilksan is a provably good determinacy-race detector packaged with the
+Tapir/LLVM compiler.  Given a Cilk program and an input -- i.e., a
+regression test -- Cilksan will either certify that the program is
+deterministic or pinpoint the instructions that can cause the program
+to behave nondeterministically.  In other words, Cilksan allows
+programmers to regression-test Cilk programs for deterministic
+behavior.
+
+
+== The Cilkscale scalability analyzer
+
+
+
+== The CSI framework
+
+
+== Publications
+- Yuxiong He, Charles E. Leiserson, and William M. Leiserson.  The
+  Cilkview Scalability Analyzer.  In ACM _SPAA_, June
+  2010, pp. 145-156.  https://doi.org/10.1145/1810479.1810509
+- Mingdong Feng and Charles E. Leiserson.  Efficient Detection of
+  Determinacy Races in Cilk Programs.  Theory of Computing Systems,
+  June 1999, 32:3, pp. 301-326.
+  https://doi.org/10.1007/s002240000120.

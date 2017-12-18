@@ -1,0 +1,98 @@
+// -*- mode: adoc -*-
+= About us
+:page-permalink: about.html
+:dotlessi: &#x131;
+:ccedilla: &#231;
+
+The Cilk Hub organization was started at MIT to support and develop
+the Cilk multithreaded programming technology.
+
+{underConstruction}
+
+== Directors
+
+- link:https://people.csail.mit.edu/cel/[Charles E. Leiserson],
+  Massachusetts Institute of Technology (Chair)
+- link:http://neboat.mit.edu/[Tao B. Schardl], Massachusetts Institute
+  of Technology
+- link:http://www.cse.wustl.edu/~angelee/[I-Ting Angelina Lee],
+  Washington University in St. Louis
+
+
+== Officers
+
+TBD:: Chair of language committee
+
+TBD:: Chair of compiler infrastructure
+
+TBD:: Chair of runtime support
+
+TBD:: Chair of cloud infrastructure
+
+TBD:: Chair of program-analysis tools
+
+TBD:: Chair of documentation
+
+TBD:: Chair of educational outreach
+
+== Advisory board
+
+- link:http://www.umut-acar.org/[Umut Acar], Carnegie Mellon
+  University
+- link:http://vikram.cs.illinois.edu/[Vikram Adve], University of
+  Illinois at Urbana-Champaign
+- link:https://www.cc.gatech.edu/~bader/[David Bader], Georgia
+  Institute of Technology 
+- link:http://www.mcs.anl.gov/~balaji/[Pavan Balaji], Argonne National
+  Laboratory
+- link:https://www.cs.cmu.edu/~guyb/[Guy E. Blelloch], Carnegie Mellon
+  University
+- link:http://crd.lbl.gov/departments/computer-science/PAR/staff/ayd-n-buluc/[Ayd{dotlessi}n
+  Bulu{ccedilla}], Lawrence Berkeley National Laboratory
+- link:http://faculty.knox.edu/dbunde/[David Bunde], Knox College
+- link:http://people.cs.uchicago.edu/~aachien/[Andrew Chien], The
+  University of Chicago
+- link:http://www3.cs.stonybrook.edu/~rezaul/[Rezaul Chowdhury],
+  Stony Brook University
+- Martin Deneroff, Emu Technology
+- link:http://www.cs.rochester.edu/~cding/[Chen Ding], University of
+  Rochester
+- link:http://people.cs.georgetown.edu/~jfineman/[Jeremy T. Fineman],
+  Georgetown University
+- link:http://www.cs.ucsb.edu/~gilbert/[John R. Gilbert], University
+  of California Santa Barbara
+- link:https://www.cs.cmu.edu/~gibbons/[Philip B. Gibbons], Carnegie
+  Mellon University
+- link:http://www.cs.umanitoba.ca/~kamalis/[Shahin Kamali], University
+  of Manitoba, Canada
+- link:http://www.cse.wustl.edu/~angelee/[I-Ting Angelina Lee],
+  Washington University in St. Louis 
+- link:http://www.csd.uwo.ca/~moreno/[Marc Moreno Maza], University of
+  Western Ontario, Canada
+- link:https://www.cs.rice.edu/~johnmc/[John Mellor-Crummey], Rice
+  University
+- link:http://polaris.cs.uiuc.edu/~padua/[David Padua], University of
+  Illinois at Urbana-Champaign
+- link:https://www.cs.utexas.edu/~pingali/[Keshav Pingali], University
+  of Texas, Austin
+- link:https://users.cs.duke.edu/~nikos/[Nikos Pitsianis], Duke
+  University
+- link:http://www.cs.unc.edu/~prins/[Jan Prins], University of North
+  Carolina at Chapel Hill
+- link:https://parasol.tamu.edu/~rwerger/[Lawrence Rauchwerger], Texas
+  A & M University
+- link:http://gtcomputing2017.cc.gatech.edu/content/vivek-sarkar[Vivek
+  Sarkar], Georgia Institute of Technology
+- link:https://www.csail.mit.edu/person/nir-shavit[Nir Shavit],
+  Massachusetts Institute of Technology
+- link:https://people.csail.mit.edu/jshun/[Julian Shun], Massachusetts
+  Institute of Technology
+- link:https://labs.oracle.com/pls/apex/f?p=labs:bio:0:120[Guy L. Steele
+  Jr.], Oracle Labs
+- link:http://www.cs.duke.edu/people/faculty/?csid=37[Xiaobai Sun],
+  Duke University
+- link:http://cseweb.ucsd.edu/~mbtaylor/[Michael Bedford Taylor],
+  University of Washington
+- link:http://freya.sdsmt.edu/faculty/tolle/[Charles R. Tolle], South
+  Dakota School of Mines & Technology
+

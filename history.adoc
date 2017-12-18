@@ -1,0 +1,39 @@
+// -*- mode: adoc -*-
+= History of Cilk
+
+Cilk was originally developed at MIT in 1994 as a parallel-programming
+extension to the C programming language.  In 2006 Cilk was spun off
+into the start-up Cilk Arts, which produced the open-source {cilkpp}
+platform as an extension to {cpp}.  Intel Corporation acquired Cilk
+Arts in 2009, add vectorization directives, and rechristened {cilkpp}
+as the Intel Cilk Plus platform, making it available commercially in
+their own compiler, as well as in open-source implementations for the
+GCC and LLVM compilers.  Research and development on Cilk technology
+has continued at MIT since Intel acquired Cilk Arts.  The most current
+versions of the Cilk software technology are available here.
+
+.Awards
+- First Prize in the 1998 _ACM SIGPLAN International Conference on
+  Functional Programming_'s Programming Contest, where Cilk was cited
+  as "the superior programming tool of choice for discriminating
+  hackers."
+- First Prize in the 2006 HPC Challenge Class 2 (Productivity)
+  competition, where Cilk was cited for "Best Overall Productivity."
+- The 2008 10-year-retrospective award by the _ACM SIGPLAN Conference
+  on Programming Language Design and Implementation_ for Mist
+  Influential 1998 PLDI Paper for
+  https://dl.acm.org/citation.cfm?id=277725[The implementation of the
+  Cilk-5 multithreaded language].
+- The 2009 Best Paper award by the _ACM Symposium on Parallelism in
+  Algorithms and Architectures_ for
+  https://dl.acm.org/citation.cfm?id=1584017[Reducers and other Cilk++
+  hyperobjects].
+- The 2012 Best Paper award by the _ACM Symposium on Parallelism in
+  Algorithms and Architectures_ for
+  https://dl.acm.org/citation.cfm?doid=2312005.2312056[Memory-mapping
+  support for reducer hyperobjects],
+- The ACM 2013 Paris Kanellakis Theory and Practice Award.
+- The 2017 Best Paper award by _ACM SIGPLAN on Principles and Practice
+  of Parallel Programming_ for
+  https://dl.acm.org/citation.cfm?id=3018758[Tapir: Embedding
+  Fork-Join Parallelism into LLVM's Intermediate Representation].

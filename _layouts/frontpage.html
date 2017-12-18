@@ -1,0 +1,113 @@
+---
+layout: default
+format: frontpage
+---
+<div id="header-home">
+    <div class="row">
+        <div class="small-12 columns">
+        </div><!-- /.medium-4.columns -->
+    </div><!-- /.row -->
+</div><!-- /#header-home -->
+
+
+{% comment %}
+*
+* First check, if widget is empty or not by checking if there is a title
+*
+{% endcomment %}
+<div class="row t60">
+	{% if page.widget1.title %}
+		{% include _frontpage-widget.html widget=page.widget1 %}
+	{% endif %}
+
+
+	{% if page.widget2.title %}
+		{% include _frontpage-widget.html widget=page.widget2 %}
+	{% endif %}
+
+
+	{% if page.widget3.title %}
+		{% include _frontpage-widget.html widget=page.widget3 %}
+	{% endif %}
+</div><!-- /.row -->
+
+
+{% comment %}
+*
+* First check, if there is a call for action-button
+*
+{% endcomment %}
+{% if page.callforaction.url contains 'http' %}
+{% assign url = '' %}
+{% else %}
+{% capture url %}{{ site.url }}{{ site.baseurl }}{% endcapture %}
+{% endif %}
+{% if page.callforaction %}
+    <div class="row t60 b60">
+        <div class="small-12 text-center columns">
+            <a class="button large radius {{ page.callforaction.style }}" href="{{ url }}{{ page.callforaction.url }}"{% if page.callforaction.url contains 'http' %} target="_blank" {% endif %}>{{ page.callforaction.text }}</a>
+        </div><!-- /.small-12.columns -->
+    </div><!-- /.row -->
+{% endif %}
+
+
+<div class="row t30">
+
+{% comment %}
+*
+* If there is content, spit it out.
+*
+{% endcomment %}
+
+<div class="medium-8 columns">
+  <header>
+
+  {% if page.image.title %}
+  <figure>
+  <img src="{{ site.urlimg }}{{ page.image.title }}" width="970" alt="{{ page.title | escape_once }}" itemprop="image">
+
+  {% if page.image.caption_url and page.image.caption %}
+  <figcaption class="text-right">
+  <a href="{{ page.image.caption_url }}">{{ page.image.caption }}</a>
+  </figcaption>
+  {% elsif page.image.caption %}
+  <figcaption class="text-right">
+  {{ page.image.caption }}
+  </figcaption>
+  {% endif %}
+  </figure>
+  {% endif %}
+
+<div itemprop="name">
+  {% if page.subheadline %}<p class="subheadline">{{ page.subheadline }}</p>{% endif %}
+  <h1>{{ page.title }}</h1>
+</div>
+
+</header>
+
+<div itemprop="articleSection">
+  {{ content }}
+</div>
+</div><!-- /.medium-8 columns -->
+
+{% comment %}
+*
+* First check, if there are any posts at all
+*
+{% endcomment %}
+
+{% unless site.posts == empty %}
+<aside>
+<div class="medium-4 columns">
+  <h3>{{ site.data.language.new_blog_entries }}</h3>
+  {% include list-posts entries='5' %}
+
+<div class="panel radius">
+  <h3>Table of contents</h3>
+  {{ page.document | tocify_asciidoc }}
+</div>
+</div><!-- /.medium-4.columns -->
+</aside>
+{% endunless %}
+</div><!-- /.row -->
+

@@ -1,0 +1,50 @@
+// -*- mode: adoc -*-
+= The Tapir/LLVM compiler
+:tapir-workeff-caption: Comparison of the work efficiency of 20 \
+parallel application benchmarks compiled using Tapir/LLVM (X's) and a \
+comparable Reference compiler (O's) which lowers parallel constructs \
+in the compiler front end.  Higher values indicate better work \
+efficiency.
+
+The Tapir/LLVM compiler compiles and optimizes Cilk programs to allow
+for efficient parallel execution on shared-memory multicore machines.
+Tapir/LLVM produces more efficient parallel code than existing
+compilers for parallel programming languages.  The current version of
+Tapir/LLVM is based on LLVM version {llvm-base}.
+
+{underConstruction}
+
+== What is Tapir?
+
+Tapir enables effective compiler optimization of Cilk programs that
+mainstream compilers, such as GCC, ICC, and LLVM, do not perform.
+Mainstream compilers for Cilk and OpenMP programs treat parallel
+language constructs as syntactic sugar for function calls into a
+parallel runtime system.  Consequently, these compilers cannot perform
+effective compiler optimization across parallel control flow.
+
+Tapir extends LLVM with a representation of logically parallel tasks.
+Tapir thereby allows LLVM's existing optimizations to effectively
+optimize across parallel control constructs, i.e., across a
+`cilk_spawn`, `cilk_sync`, or `cilk_for`.  As a result, Tapir/LLVM
+produces more efficient parallel executables than those of mainstream
+Cilk compilers.  Figure xref:tapir-work-efficiency[1] presents the
+performance results from the
+link:https://dl.acm.org/citation.cfm?id=3018758[_PPoPP_ 2017 paper on
+Tapir] comparing the work-efficiency of Cilk programs compiled with
+Tapir/LLVM versus the traditional compilation approach:
+
+[#tapir-work-efficiency]
+.{tapir-workeff-caption}
+image:tapir_workeff_scatter.png[Work-efficiency performance results for Tapir/LLVM.]
+
+// == Next Steps
+// - link:download.html[Download and install] the Tapir/LLVM compiler.
+// - link:compiling.html[Compile and run] your Cilk programs using
+//   Tapir/LLVM.
+
+== Publications
+- Tao B. Schardl, William S. Moses, and Charles E. Leiserson.  Tapir:
+  Embedding Fork-Join Parallelism into LLVM's Intermediate
+  Representation.  In ACM _PPoPP_, February
+  2017, pp. 249-265. https://doi.org/10.1007/s002240000120.

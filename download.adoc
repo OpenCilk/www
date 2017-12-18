@@ -1,0 +1,83 @@
+// -*- mode: adoc -*-
+= Download Cilk
+:page-header: title
+
+The latest version of the Cilk system consists of the Tapir/LLVM
+compiler and the Intel Cilk Plus runtime library.  This version has
+been tested on `x86-64` systems running recent distributions of Linux,
+including Ubuntu 16.04 and Fedora 24.
+
+{underConstruction}
+
+The Tapir/LLVM compiler is the newest compiler that supports Cilk.
+Tapir/LLVM extends LLVM and Clang version {llvm-base} with support for
+the Cilk keywords, Cilk reducer hyperobjects, and a version of the
+`grainsize` pragma for `cilk_for` loops.  The Tapir/LLVM compiler
+implements the Tapir extension of LLVM's intermediate representation,
+described in this link:https://doi.org/10.1007/s002240000120[paper],
+to compile task-parallel programs more efficiently than previous
+compilers.  Tapir/LLVM also includes the a provably good
+determinacy-race detector that is guaranteed to find a race if one
+exists or certify the absence of races in a program execution.
+
+The current release of the Tapir/LLVM compiler is version
+{tapir-release}.
+
+== Debian package
+
+For x86-64 systems running Debian or Ubuntu, you can download binaries
+for Tapir/LLVM via the following package:
+[link:tapir_1.0-2_amd64.deb[amd64]].  You can install this package
+using `apt` as follows:
+[source,console]
+----
+$ sudo apt-get install ./tapir_1.0-2_amd64.deb
+----
+
+== Mac OS X installation
+You can install Tapir/LLVM on Mac OS X using Homebrew.
+
+[WARNING]
+
+This installation process is currently under development.  Your
+mileage might vary.
+
+
+[source,console]
+----
+$ brew install wsmoses/tools/cilkrts
+$ brew install wsmoses/tools/tapir
+----
+
+== Source
+
+You can download the Tapir/LLVM source code either as a
+link:tapir-1.0-2_src.tar.gz[tarball] or through
+https://github.com/wsmoses/Tapir-Meta.git[GitHub].  You will need to
+install the Intel Cilk Plus runtime system separately.
+
+Building Tapir/LLVM involves building the LLVM and Clang systems that
+they extend.  To build Tapir/LLVM from source, you will need a C/{cpp}
+compiler and a recent version of `cmake`.  See
+http://llvm.org/docs/CMake.html for more information on building LLVM
+and Clang.
+
+The Tapir/LLVM source code includes a build script.  You can compile a
+release build of Tapir/LLVM by running the following command in the
+source directory:
+[source,console]
+----
+$ ./build.sh release
+----
+The build script will attempt to use parallel processors to speed up
+compilation.
+
+[WARNING]
+
+Building the LLVM and Clang systems considers significant computing
+resources.  We have found that building a Release build of LLVM and
+Clang requires approximately 50 GB of disk space and 12 GB of main
+memory to compile.  A fresh build can take substantial time to
+complete as well, e.g., approximately an hour on one processor of an
+AWS c4.8xlarge instance.
+
