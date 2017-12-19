@@ -27,11 +27,11 @@ The current release of the Tapir/LLVM compiler is version
 
 For x86-64 systems running Debian or Ubuntu, you can download binaries
 for Tapir/LLVM via the following package:
-[link:tapir_1.0-2_amd64.deb[amd64]].  You can install this package
+[link:tapir_{tapir-release}_amd64.deb[amd64]].  You can install this package
 using `apt` as follows:
 [source,console]
 ----
-$ sudo apt-get install ./tapir_1.0-2_amd64.deb
+$ sudo apt-get install ./tapir_1.0-3_amd64.deb
 ----
 
 == Mac OS X installation
