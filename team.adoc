@@ -4,8 +4,8 @@
 :dotlessi: &#x131;
 :ccedilla: &#231;
 
-The Cilk Hub organization was started at MIT to support and develop
-the Cilk multithreaded programming technology.
+The Cilk Hub organization supports and develops the Cilk multithreaded
+programming technology.
 
 {underConstruction}
 

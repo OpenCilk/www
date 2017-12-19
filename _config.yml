@@ -16,7 +16,7 @@
 title: Cilk Hub
 email: cilk@mit.edu
 description: 'Cilk Hub maintains recent developments with the Cilk multithreaded programming technology.'
-baseurl: /newsite # the subpath of your site, e.g. /blog
+baseurl: '' # the subpath of your site, e.g. /blog
 url: http://cilk.mit.edu # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
@@ -27,6 +27,7 @@ highlighter: pygments
 permalink: pretty
 plugins:
   - jekyll-feed
+  - 'jekyll/scholar'
 asciidoc:
   ext: asciidoc,adoc,ad
 asciidoctor-enabled: true
@@ -48,9 +49,15 @@ asciidoctor:
     llvm-base: 5
     issueTracker: link:https://github.com/wsmoses/Parallel-IR/issues[issue tracker, window="_blank"]
     underConstruction: image:http://textfiles.com/underconstruction/TokyoPagoda6968UnderConstruct.gif[]
+    page-liquid: ''
+
 sass:
     sass_dir: _sass
     style: :compressed
+
+scholar:
+    source: _papers
+    bibliography: allpapers.bib
 
 # The language setting is used in /includes/header.html for html-settings
 language: 'en'

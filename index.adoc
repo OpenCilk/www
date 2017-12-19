@@ -6,10 +6,7 @@
            parallel programing
 :description: Cilk Hub maintains recent developments with the Cilk +
               multithreaded programming technology. 
-:page-liquid:
 :page-layout: frontpage
-:page-header: title
-:teaser: Welcome!
 
 Welcome to Cilk Hub!  Here you can find recent developments with the
 Cilk multithreaded programming technology.

@@ -25,19 +25,24 @@ to behave nondeterministically.  In other words, Cilksan allows
 programmers to regression-test Cilk programs for deterministic
 behavior.
 
+pass:[{% cite FengLe97 FengLe99 %}]
 
 == The Cilkscale scalability analyzer
 
 
+pass:[{% cite HeLeLe10 %}]
 
 == The CSI framework
 
 
 == Publications
-- Yuxiong He, Charles E. Leiserson, and William M. Leiserson.  The
-  Cilkview Scalability Analyzer.  In ACM _SPAA_, June
-  2010, pp. 145-156.  https://doi.org/10.1145/1810479.1810509
-- Mingdong Feng and Charles E. Leiserson.  Efficient Detection of
-  Determinacy Races in Cilk Programs.  Theory of Computing Systems,
-  June 1999, 32:3, pp. 301-326.
-  https://doi.org/10.1007/s002240000120.
+
+pass:[{% bibliography --cited %}]
+
+// - Yuxiong He, Charles E. Leiserson, and William M. Leiserson.  The
+//   Cilkview Scalability Analyzer.  In ACM _SPAA_, June
+//   2010, pp. 145-156.  https://doi.org/10.1145/1810479.1810509
+// - Mingdong Feng and Charles E. Leiserson.  Efficient Detection of
+//   Determinacy Races in Cilk Programs.  Theory of Computing Systems,
+//   June 1999, 32:3, pp. 301-326.
+//   https://doi.org/10.1007/s002240000120.
