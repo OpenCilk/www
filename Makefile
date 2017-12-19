@@ -1,15 +1,21 @@
-WEBDIR = /mit/cilk/web_scripts/newsite
+WEBDIR = /mit/cilk/web_scripts
 
 LOCAL_SITE = ./_site
 
-.PHONY: default all publish
+JEKYLL_BUILD = bundle exec jekyll build --destination $(LOCAL_SITE) # Builds the website into $(LOCAL_SITE)
+
+.PHONY: default all udpate publish
 
 default: all
 
-all:
-	bundle exec jekyll build --destination $(LOCAL_SITE)  # Builds the website into $(LOCAL_SITE)
+update: Gemfile Gemfile.lock
+	bundle update
+
+all: update
+	$(JEKYLL_BUILD)
 
 publish: all
+	JEKYLL_ENV=production $(JEKYLL_BUILD)
 	@if [ ! -d $(WEBDIR) ]; \
 	then echo "ERROR: Unable to publish webpage to $(WEBDIR)"; \
 	else \
