@@ -64,10 +64,10 @@ link:tools[Scalability analysis]:: Cilk supports efficient tools for
 finding performance bottlenecks that inhibit a program's parallel
 scalability.
 
-link:tools[The CSI compiler-instrumentation framework]:: The
-Tapir/LLVM compiler supports CSI, a framework that allows programmers
-to develop their own dynamic-analysis tools to study Cilk program
-execution.
+// link:tools[The CSI compiler-instrumentation framework]:: The
+// Tapir/LLVM compiler supports CSI, a framework that allows programmers
+// to develop their own dynamic-analysis tools to study Cilk program
+// execution.
 
 // Cilk reducers:: The Cilk systems supports reducer hyperobjects, a
 // flexible mechanism for implementing parallel reductions.
@@ -85,6 +85,7 @@ There are several enhancements to the Cilk system currently under
 development:
 
 - A new implementation of reducer hyperobjects.
+- Integration of the CSI framework for compiler instrumentation.
 - Various parallel compiler optimizations.
 - Performance enhancements to the Cilksan race detector.
 - Improved scalability analysis and profiling.
