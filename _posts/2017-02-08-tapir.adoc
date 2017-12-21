@@ -14,4 +14,7 @@ tags:
 Congratulations to the authors, Tao B. Schardl, William S. Moses, and
 Charles E. Leiserson!
 
-You can access the paper link:https://doi.org/10.1145/3018743.3018758[here].
+This work on Tapir was previously covered by the MIT News Office
+link:http://news.mit.edu/2017/optimizing-code-compiler-parallel-programs-0130[here].
+You can access the PPoPP paper itself
+link:https://doi.org/10.1145/3018743.3018758[here].
