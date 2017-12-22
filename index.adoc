@@ -113,7 +113,12 @@ development:
   modifying the compiler or understanding its internals.
 - Enhanced documentation on programming in Cilk and on using each
   component of the Cilk platform.  As a result, developers working on
-  other parallel languages 
+  other parallel languages, such as
+  link:http://www.openmp.org/[OpenMP],
+  link:https://julialang.org/[Julia], or
+  link:https://github.com/rayon-rs/rayon[Rayon], can selectively make
+  use of components of the Cilk platform, such as the Tapir/LLVM
+  compiler, the runtime system, or the tool suite.
 - Educational and teaching materials, workshops, and tutorials on
   Cilk.
 - A cloud VM with the complete package of Cilk technologies installed
