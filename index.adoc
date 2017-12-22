@@ -79,24 +79,50 @@ scalability.
 // computer architectures, algorithms, applications, software tools,
 // languages, compilers, and runtime systems.
 
-== In the works
+== What's in the works?
 
 There are several enhancements to the Cilk system currently under
 development:
 
-- A new implementation of reducer hyperobjects.
-- Integration of the CSI framework for compiler instrumentation.
-- Various parallel compiler optimizations.
-- Performance enhancements to the Cilksan race detector.
-- Improved scalability analysis and profiling.
-- Sensitivity analysis.
-- Enhanced documentation.
-- Educational and teaching materials.
-- Virtual image to make it easy to try out Cilk.
-- Cilk software library.
-- Cilk benchmark suite.
-- Workshops and tutorials.
-- Interoperability with Pthreads.
+- New language constructs, including support for spawning statements,
+  Cilk blocks that are automatically synced when control leaves their
+  lexical scope, and support for inlets.
+- A new implementation of reducer hyperobjects.  The new
+  implementation will include an improved language syntax for using
+  reducers, a more efficient implementation of reducers in the runtime
+  system, and compiler optimizations that target reducers in Cilk
+  programs.
+- Various parallel compiler optimizations, including general sync
+  elimination, fusion of `cilk_for` loops, and automatic coarsening of
+  `cilk_for` loops.
+- Runtime interoperability with Pthreads, to allow programmers to
+  parallelize individual Pthreads using Cilk without breaking existing
+  concurrency mechanisms in the program.
+- Performance enhancements to the Cilksan determinacy-race detector.
+  These enhancements include data-compression schemes to reduce
+  Cilksan's space overhead, a more efficient implementation of the
+  Cilksan algorithm, and incorporation of compiler analysis of
+  determinacy races into Cilksan.
+- Improved scalability analysis and profiling.  These improvements
+  including augmenting Cilkscale to analyze scheduling overheads, to
+  profile the work and span of a Cilk program, and to analyze the
+  sensitivity of each function on the whole program's scalability.
+- Integration of the CSI framework for compiler instrumentation.  The
+  CSI framework makes it easy for tool writers to write efficient
+  dynamic-analysis tools that use compiler instrumentation without
+  modifying the compiler or understanding its internals.
+- Enhanced documentation on programming in Cilk and on using each
+  component of the Cilk platform.  As a result, developers working on
+  other parallel languages 
+- Educational and teaching materials, workshops, and tutorials on
+  Cilk.
+- A cloud VM with the complete package of Cilk technologies installed
+  and properly configured, to make it easy to try out Cilk.
+- Cilk software libraries, including libraries for graph computations,
+  such as link:https://people.eecs.berkeley.edu/~jshun/ligra.html[Ligra].
+- A suite of benchmark applications written in Cilk, including
+  benchmarks in the link:http://www.cs.cmu.edu/~pbbs/[Problem-based
+  benchmark suite].
 
 Have a suggestion or feature request?  We want to hear about it!
 Document your suggestion as a new issue on our {issueTracker}.
