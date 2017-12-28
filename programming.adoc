@@ -12,8 +12,6 @@ extension.
 // operates "under the covers" to make it easy for developers to write
 // correct parallel programs that perform with high efficiency.
 
-{underConstruction}
-
 == Spawn and sync
 
 Let us first examine the task-parallel keywords `cilk_spawn` and

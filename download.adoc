@@ -1,13 +1,10 @@
 // -*- mode: adoc -*-
 = Download Cilk
-:page-header: title
 
 The latest version of the Cilk system consists of the Tapir/LLVM
 compiler and the Intel Cilk Plus runtime library.  This version has
 been tested on `x86-64` systems running recent distributions of Linux,
 including Ubuntu 16.04 and Fedora 24.
-
-{underConstruction}
 
 The Tapir/LLVM compiler is the newest compiler that supports Cilk.
 Tapir/LLVM extends LLVM and Clang version {llvm-base} with support for

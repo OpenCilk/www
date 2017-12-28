@@ -12,8 +12,6 @@ Tapir/LLVM produces more efficient parallel code than existing
 compilers for parallel programming languages.  The current version of
 Tapir/LLVM is based on LLVM version {llvm-base}.
 
-{underConstruction}
-
 == What is Tapir?
 
 Tapir enables effective compiler optimization of Cilk programs that

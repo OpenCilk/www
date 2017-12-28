@@ -13,8 +13,6 @@ The Tapir/LLVM compiler also supports CSI, a framework that allows
 programmers to write dynamic-analysis tools that use compiler
 instrumentation without modifying the compiler.
 
-{underConstruction}
-
 == The Cilksan determinacy-race detector
 
 Cilksan is a provably good determinacy-race detector packaged with the

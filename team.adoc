@@ -7,8 +7,6 @@
 The Cilk Hub organization supports and develops the Cilk multithreaded
 programming technology.
 
-{underConstruction}
-
 == Directors
 
 - link:https://people.csail.mit.edu/cel/[Charles E. Leiserson],

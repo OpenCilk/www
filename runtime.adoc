@@ -16,8 +16,6 @@ Cilk programs to execute efficiently in a variety of environments:
   simultaneously on the same system, then these computations will not
   oversubscribe the parallel processors on the system.
 
-{underConstruction}
-
 .What is parallelism?
 
 The parallelism of a Cilk program can be measured quantitatively in

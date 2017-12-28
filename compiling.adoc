@@ -8,8 +8,6 @@ compile and link an ordinary serial program.  When run, the resulting
 executable will use the Cilk runtime system to execute in parallel on
 whatever parallel processors are available on the machine.
 
-{underConstruction}
-
 == Testing for determinism
 
 We recommend checking your Cilk program for race bugs to ensure that
