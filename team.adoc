@@ -55,6 +55,8 @@ TBD:: Chair of educational outreach
 - Martin Deneroff, Emu Technology
 - link:http://www.cs.rochester.edu/~cding/[Chen Ding], University of
   Rochester
+- link:http://math.mit.edu/~edelman/[Alan Edelman], Masssachusetts
+  Institute of Technology
 - link:http://people.cs.georgetown.edu/~jfineman/[Jeremy T. Fineman],
   Georgetown University
 - link:http://www.cs.ucsb.edu/~gilbert/[John R. Gilbert], University
