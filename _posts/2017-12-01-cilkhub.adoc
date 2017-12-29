@@ -3,10 +3,10 @@ breadcrumb: true
 tags:
   - cilkhub
 ---
-= Cilk Hub taking on Cilk developments
+= Cilk Hub taking on Cilk development after Intel announcement
 :page-layout: page
 :page-subheadline: Cilk Hub
-:page-teaser: Cilk Hub is taking on developments with Cilk.
+:page-teaser: Cilk Hub is taking on Cilk development.
 :page-categories: cilkhub
 :date: 2017-12-01
 
@@ -14,4 +14,8 @@ In light of
 link:https://software.intel.com/en-us/articles/migrate-your-application-to-use-openmp-or-intelr-tbb-instead-of-intelr-cilktm-plus[Intel's
 recent announcement] that they would no longer maintain
 link:https://www.cilkplus.org/[Intel Cilk Plus], Cilk Hub is taking on
-developments with Cilk.
+Cilk development.  The link:/tapir/[Tapir/LLVM compiler] is nearly
+100% compliant with the Intel Cilk Plus minus the vector extensions
+and is suitable for multithreaded task parallelism.  Tapir/LLVM also
+supports some extensions to Intel Cilk Plus, such as the ability to
+spawn statement blocks.
