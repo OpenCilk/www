@@ -10,12 +10,12 @@ The Tapir/LLVM compiler is the newest compiler that supports Cilk.
 Tapir/LLVM extends LLVM and Clang version {llvm-base} with support for
 the Cilk keywords, Cilk reducer hyperobjects, and a version of the
 `grainsize` pragma for `cilk_for` loops.  The Tapir/LLVM compiler
-implements the Tapir extension of LLVM's intermediate representation,
-described in this link:https://doi.org/10.1007/s002240000120[paper],
-to compile task-parallel programs more efficiently than previous
-compilers.  Tapir/LLVM also includes the a provably good
-determinacy-race detector that is guaranteed to find a race if one
-exists or certify the absence of races in a program execution.
+implements the Tapir extension of LLVM's intermediate representation
+pass:[{% cite SchardlMoLe17 %}] to compile task-parallel programs more
+efficiently than previous compilers.  Tapir/LLVM also includes the a
+provably good determinacy-race detector that is guaranteed to find a
+race if one exists or certify the absence of races in a program
+execution.
 
 The current release of the Tapir/LLVM compiler is version
 {tapir-release}.
@@ -78,3 +78,7 @@ memory to compile.  A fresh build can take substantial time to
 complete as well, e.g., approximately an hour on one processor of an
 AWS c4.8xlarge instance.
 
+
+== Publications
+
+pass:[{% bibliography --cited %}]
