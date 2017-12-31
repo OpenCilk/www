@@ -4,8 +4,10 @@
 // Web page meta data.
 :keywords: Cilk, Reducers, Cilksan, Cilkprof, Tapir, multicore, +
            parallel programing
-:description: Cilk Hub maintains recent developments with the Cilk +
-              multithreaded programming technology. 
+:description: Cilk Hub seeks to provide quality open-source +
+              parallel-programming software and support services for +
+              the benefit of application programmers and +
+              computer-science researchers.
 :page-layout: frontpage
 
 Welcome to Cilk Hub!  Here you can find recent developments with the

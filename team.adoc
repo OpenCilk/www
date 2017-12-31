@@ -4,8 +4,9 @@
 :dotlessi: &#x131;
 :ccedilla: &#231;
 
-The Cilk Hub organization supports and develops the Cilk multithreaded
-programming technology.
+*_Our Mission:_* The Cilk Hub organization seeks to provide quality
+open-source parallel-programming software and support services for the
+benefit of application programmers and computer-science researchers.
 
 == Directors
 
