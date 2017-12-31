@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: Cilk Hub
 email: cilk@mit.edu
-description: 'Cilk Hub maintains recent developments with the Cilk multithreaded programming technology.'
+description: 'Cilk Hub seeks to provide quality open-source parallel-programming software and support services for the benefit of application programmers and computer-science researchers.'
 baseurl: '' # the subpath of your site, e.g. /blog
 url: http://cilk.mit.edu # the base hostname & protocol for your site, e.g. http://example.com
 
@@ -27,6 +27,8 @@ highlighter: pygments
 permalink: pretty
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-last-modified-at
   - 'jekyll/scholar'
 asciidoc:
   ext: asciidoc,adoc,ad
@@ -51,9 +53,27 @@ asciidoctor:
     underConstruction: image:http://textfiles.com/underconstruction/TokyoPagoda6968UnderConstruct.gif[]
     page-liquid: ''
 
+#      _____
+#     / ___/____ ___________
+#     \__ \/ __ `/ ___/ ___/
+#    ___/ / /_/ (__  |__  )     More › http://sass-lang.com/
+#   /____/\__,_/____/____/      More › http://jekyllrb.com/docs/assets/#sassscss
+#
+
 sass:
     sass_dir: _sass
     style: :compressed
+
+#       ___                __      __  _
+#      /   |  ____  ____ _/ /_  __/ /_(_)_________
+#     / /| | / __ \/ __ `/ / / / / __/ / ___/ ___/
+#    / ___ |/ / / / /_/ / / /_/ / /_/ / /__(__  )
+#   /_/  |_/_/ /_/\__,_/_/\__, /\__/_/\___/____/      https://www.google.com/analytics/
+#                        /____/
+#
+# used in _includes/footer_scripts
+
+google_analytics_tracking_id: UA-111688461-1
 
 scholar:
     source: _papers
@@ -68,7 +88,7 @@ defaults:
       path: '' 				# an empty string here means all files in the project
       type: 'pages'
     values:
-      show_meta: false 	# Hide metadata for all pages
+      show_meta: true 	# Hide metadata for all pages
       sidebar: right   		# Possible values › left, right › by default there will be no sidebar
       comments: false
       author: CilkHub     # Default author for pages

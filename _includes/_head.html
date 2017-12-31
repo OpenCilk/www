@@ -18,7 +18,18 @@
 
 {% assign title = title | strip_html | escape | strip_newlines %}
 
-{% endcapture %}<meta charset="utf-8">
+{% endcapture %}
+{% if site.google_analytics_tracking_id %}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics_tracking_id }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{{ site.google_analytics_tracking_id }}');
+</script>
+{% endif %}<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{{ title }}</title>
 
@@ -42,7 +53,6 @@
 	<noscript>
 		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
 	</noscript>
-
 
 	<!-- Search Engine Optimization -->
 	<meta name="description" content="{{ description }}">
