@@ -88,6 +88,9 @@ format: frontpage
 <div itemprop="articleSection">
   {{ content }}
 </div>
+{% if page.show_meta == true %}
+{% include _meta_information.html %}
+{% endif %}
 </div><!-- /.medium-8 columns -->
 
 {% comment %}
@@ -96,11 +99,12 @@ format: frontpage
 *
 {% endcomment %}
 
-{% unless site.posts == empty %}
 <aside>
 <div class="medium-4 columns">
+  {% unless site.posts == empty %}
   <h3>{{ site.data.language.new_blog_entries }}</h3>
   {% include list-posts entries='5' %}
+  {% endunless %}
 
 <div class="panel radius">
   <h3>Table of contents</h3>
@@ -108,6 +112,5 @@ format: frontpage
 </div>
 </div><!-- /.medium-4.columns -->
 </aside>
-{% endunless %}
 </div><!-- /.row -->
 
