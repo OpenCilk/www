@@ -78,6 +78,7 @@ google_analytics_tracking_id: UA-111688461-1
 scholar:
     source: _papers
     bibliography: allpapers.bib
+    sort_by: author
 
 # The language setting is used in /includes/header.html for html-settings
 language: 'en'
