@@ -60,10 +60,10 @@ TBD:: Chair of educational outreach
   Institute of Technology
 - link:http://people.cs.georgetown.edu/~jfineman/[Jeremy T. Fineman],
   Georgetown University
-- link:http://www.cs.ucsb.edu/~gilbert/[John R. Gilbert], University
-  of California Santa Barbara
 - link:https://www.cs.cmu.edu/~gibbons/[Philip B. Gibbons], Carnegie
   Mellon University
+- link:http://www.cs.ucsb.edu/~gilbert/[John R. Gilbert], University
+  of California Santa Barbara
 - link:http://www.cs.umanitoba.ca/~kamalis/[Shahin Kamali], University
   of Manitoba, Canada
 - link:http://www.cse.wustl.edu/~angelee/[I-Ting Angelina Lee],
