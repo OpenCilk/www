@@ -7,23 +7,25 @@ been tested on `x86-64` systems running recent distributions of Linux,
 including Ubuntu 16.04 and Fedora 24.
 
 The Tapir/LLVM compiler is the newest compiler that supports Cilk.
-Tapir/LLVM extends LLVM and Clang version {llvm-base} with support for
-the Cilk keywords, Cilk reducer hyperobjects, and a version of the
-`grainsize` pragma for `cilk_for` loops.  The Tapir/LLVM compiler
-implements the Tapir extension of LLVM's intermediate representation
-pass:[{% cite SchardlMoLe17 %}] to compile task-parallel programs more
-efficiently than previous compilers.  Tapir/LLVM also includes the a
-provably good determinacy-race detector that is guaranteed to find a
-race if one exists or certify the absence of races in a program
-execution.
+Tapir/LLVM extends LLVM and Clang with support for the Cilk keywords,
+Cilk reducer hyperobjects, and a version of the `grainsize` pragma for
+`cilk_for` loops.  The Tapir/LLVM compiler implements the Tapir
+extension of LLVM's intermediate representation pass:[{% cite
+SchardlMoLe17 %}] to compile task-parallel programs more efficiently
+than previous compilers.  Tapir/LLVM also includes the Cilksan
+determinacy-race detector, which is guaranteed to find a race if one
+exists or certify the absence of races in a program execution.
 
 The current release of the Tapir/LLVM compiler is version
-{tapir-release}.
+{tapir-release}.  This release is based on version {llvm-base} of LLVM
+and Clang.  The source for an experimental version of Tapir/LLVM,
+based on version 6.0 of LLVM and Clang, is available on
+https://github.com/wsmoses/[GitHub].
 
 == Debian package
 
-For x86-64 systems running Debian or Ubuntu, you can download binaries
-for Tapir/LLVM via the following package:
+For x86-64 systems running Debian or Ubuntu, binaries for Tapir/LLVM
+are available via the following package:
 [link:{{ "tapir_1.0-3_amd64.deb" | relative_url }}[amd64]].  You can install this package
 using `apt` as follows:
 [source,console]
@@ -48,26 +50,16 @@ $ brew install wsmoses/tools/tapir
 
 == Source
 
-You can download the Tapir/LLVM source code either as a
-link:tapir-1.0-2_src.tar.gz[tarball] or through
-https://github.com/wsmoses/Tapir-Meta.git[GitHub].  You will need to
-install the Intel Cilk Plus runtime system separately.
+You can download the Tapir/LLVM source code
+// either as a link:{{ "tapir_1.0-2_src.tar.gz" | relative_url
+}}[tarball] or through Git Hub.  You will need to install the Cilk
+Plus runtime system separately.
 
 Building Tapir/LLVM involves building the LLVM and Clang systems that
 they extend.  To build Tapir/LLVM from source, you will need a C/{cpp}
 compiler and a recent version of `cmake`.  See
 http://llvm.org/docs/CMake.html for more information on building LLVM
 and Clang.
-
-The Tapir/LLVM source code includes a build script.  You can compile a
-release build of Tapir/LLVM by running the following command in the
-source directory:
-[source,console]
-----
-$ ./build.sh release
-----
-The build script will attempt to use parallel processors to speed up
-compilation.
 
 [WARNING]
 
@@ -78,6 +70,87 @@ memory to compile.  A fresh build can take substantial time to
 complete as well, e.g., approximately an hour on one processor of an
 AWS c4.8xlarge instance.
 
+=== Quick start
+
+The https://github.com/wsmoses/Tapir-Meta.git[Tapir-Meta] repository
+on GitHub provides a simple means for downloading and building
+Tapir/LLVM compiler and its companion repositories, via the following
+commands:
+[source,console]
+----
+$ git clone --recursive https://github.com/wsmoses/Tapir-Meta.git
+$ cd Tapir-Meta/
+$ ./build.sh release
+$ source ./setup-env.sh
+----
+The build script will attempt to use parallel processors to speed up
+compilation.
+
+=== Build guide
+
+The source code for the Tapir/LLVM compiler consists of several integrated
+repositories.  The repository structure reflects that of LLVM itself.
+
+- The https://github.com/wsmoses/Tapir-LLVM.git[Tapir-LLVM] repository
+  houses the Tapir fork of LLVM.  This fork implements the Tapir
+  extensions to LLVM's intermediate representation.  This fork also
+  implements support for the CSI tool framework.
+- The https://github.com/wsmoses/Tapir-Clang.git[Tapir-Clang]
+  repository houses the Tapir fork of LLVM's Clang front-end.  This
+  fork implements support for Cilk and generates LLVM IR with Tapir
+  from Cilk's parallel language constructs.
+- The
+  https://github.com/wsmoses/Tapir-compiler-rt.git[Tapir-compiler-rt]
+  repository houses the fork of LLVM's compiler-rt repository.  This
+  fork includes the source code of the Cilksan and Cilkscale tools.
+  This fork also includes the runtime for the CSI framework.
+- The https://github.com/wsmoses/Tapir-Polly.git[Tapir-Polly]
+  repository houses the fork of LLVM's Polly repository.  This fork
+  implements extensions to Polly to generate Tapir intermediate
+  representation for parallel loops.
+
+For LLVM repositories that do not have a custom fork, Tapir/LLVM
+should be able to work with the existing LLVM repository natively.
+
+The following instructions will check out this collection of
+repositories appropriately in the current directory:
+
+[source,console]
+----
+$ git clone https://github.com/wsmoses/Tapir-LLVM.git src
+$ git clone https://github.com/wsmoses/Tapir-Clang.git src/tools/clang
+$ git clone https://github.com/wsmoses/Tapir-compiler-rt.git src/projects/compiler-rt
+$ git clone https://github.com/wsmoses/Tapir-Polly.git src/tools/polly
+----
+
+To build Tapir/LLVM, you will need the following executables and
+libraries:
+
+- CMake, version 3.4.3 or newer, and a {cpp} compiler that supports
+  {cpp}11, are needed to build Tapir/LLVM.
+- The link:https://github.com/google/snappy[Snappy]
+  compression/decompression library is needed to build and run
+  Cilksan.  Many platforms provide a package for installing Snappy,
+  e.g., `libsnappy-dev` on Ubuntu, `snappy-devel` on Fedora, or `brew
+  install snappy` on Mac OS X.
+- link:https://www.gnu.org/software/binutils/[Binutils] is needed to
+  use link-time optimization (LTO).  Many platforms provide a package
+  for to install binutils, e.g., `binutils-dev` on Ubuntu, or
+  `binutils-devel` on Fedora.
+
+After checking out these repositories, you can build Tapir/LLVM from
+source using the following command.
+
+[source,console]
+----
+$ mkdir src/build
+$ cd src/build
+$ cmake -DCMAKE_BUILD_TYPE=Debug -DLLVM_TARGETS_TO_BUILD=host -DLLVM_BINUTILS_INCDIR=/usr/include ..
+$ cmake --build .
+----
+
+Additional build-configuration options are available.  Please see
+http://llvm.org/docs/CMake.html for more information.
 
 == Publications
 
