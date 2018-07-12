@@ -3,8 +3,10 @@
 
 The latest version of the Cilk system consists of the Tapir/LLVM
 compiler and the Intel Cilk Plus runtime library.  This version has
-been tested on `x86-64` systems running recent distributions of Linux,
+been tested on x86-64 systems running recent distributions of Linux,
 including Ubuntu 16.04 and Fedora 24.
+
+== Installing Tapir/LLVM
 
 The Tapir/LLVM compiler is the newest compiler that supports Cilk.
 Tapir/LLVM extends LLVM and Clang with support for the Cilk keywords,
@@ -22,18 +24,39 @@ and Clang.  The source for an experimental version of Tapir/LLVM,
 based on version 6.0 of LLVM and Clang, is available on
 https://github.com/wsmoses/[GitHub].
 
-== Debian package
+=== Debian or Ubuntu
 
 For x86-64 systems running Debian or Ubuntu, binaries for Tapir/LLVM
-are available via the following package:
-[link:{{ "tapir_1.0-3_amd64.deb" | relative_url }}[amd64]].  You can install this package
-using `apt` as follows:
+and associated tools are available via a
+https://launchpad.net/~wsmoses/+archive/ubuntu/tapir-toolchain[PPA].
+You can install the Tapir/LLVM toolchain as follows:
 [source,console]
 ----
-$ sudo apt-get install ./tapir_1.0-3_amd64.deb
+$ sudo apt-add-repository ppa:wsmoses/tapir-toolchain
+$ sudo apt-get update
+$ sudo apt-get install tapirclang-5.0 libcilkrts5
 ----
 
-== Mac OS X installation
+These commands will install the executables `clang-5.0` and
+`{clangpp}-5.0`.  You can then set `clang` and `{clangpp}` to use these
+executables by default as follows:
+
+[source,console]
+----
+$ sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-5.0 10 --slave /usr/bin/clang++ clang++ /usr/bin/clang++-5.0
+$ sudo update-alternatives --config clang
+----
+
+You will be able to install updates to Tapir/LLVM in the same way as
+other Debian or Ubuntu packages:
+
+[source,console]
+----
+$ sudo apt-get update
+$ sudo apt-get upgrade
+----
+
+=== Mac OS X installation
 You can install Tapir/LLVM on Mac OS X using Homebrew.
 
 [WARNING]
@@ -48,7 +71,7 @@ $ brew install wsmoses/tools/cilkrts
 $ brew install wsmoses/tools/tapir
 ----
 
-== Source
+=== Source
 
 You can download the Tapir/LLVM source code
 // either as a link:{{ "tapir_1.0-2_src.tar.gz" | relative_url
@@ -57,20 +80,20 @@ Plus runtime system separately.
 
 Building Tapir/LLVM involves building the LLVM and Clang systems that
 they extend.  To build Tapir/LLVM from source, you will need a C/{cpp}
-compiler and a recent version of `cmake`.  See
+compiler and a recent version of Cmake.  See
 http://llvm.org/docs/CMake.html for more information on building LLVM
 and Clang.
 
 [WARNING]
 
 Building the LLVM and Clang systems considers significant computing
-resources.  We have found that building a Release build of LLVM and
-Clang requires approximately 50 GB of disk space and 12 GB of main
+resources.  We have found that building a Debug build of LLVM and
+Clang requires approximately 40 GB of disk space and 12 GB of main
 memory to compile.  A fresh build can take substantial time to
 complete as well, e.g., approximately an hour on one processor of an
 AWS c4.8xlarge instance.
 
-=== Quick start
+==== Quick start
 
 The https://github.com/wsmoses/Tapir-Meta.git[Tapir-Meta] repository
 on GitHub provides a simple means for downloading and building
@@ -86,7 +109,7 @@ $ source ./setup-env.sh
 The build script will attempt to use parallel processors to speed up
 compilation.
 
-=== Build guide
+==== Build guide
 
 The source code for the Tapir/LLVM compiler consists of several integrated
 repositories.  The repository structure reflects that of LLVM itself.
@@ -145,12 +168,42 @@ source using the following command.
 ----
 $ mkdir src/build
 $ cd src/build
-$ cmake -DCMAKE_BUILD_TYPE=Debug -DLLVM_TARGETS_TO_BUILD=host -DLLVM_BINUTILS_INCDIR=/usr/include ..
+$ cmake -DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD=host -DLLVM_BINUTILS_INCDIR=/usr/include ..
 $ cmake --build .
 ----
 
 Additional build-configuration options are available.  Please see
 http://llvm.org/docs/CMake.html for more information.
+
+== Cilk Plus runtime
+
+The Intel Cilk Plus runtime is available in a package on many Linux
+distributions.  For example, the Cilk Plus runtime is available via
+the `libcilkrt5` package on Debian or Ubuntu, and via the `libcilkrts`
+package on Fedora.
+
+For systems that do not provide a package for the Intel Cilk Plus
+runtime system, you can build the runtime system from source using a
+compiler that supports Cilk, such as Tapir/LLVM.  Assuming that
+Tapir/LLVM has been installed as `clang` on the system, the Cilk Plus
+runtime-system library can be obtained by downloading the source from
+`https://github.com/CilkHub/cilkrts/archive/v0.1.2.zip` or
+`https://github.com/CilkHub/cilkrts/archive/v0.1.2.tar.gz`, unpacking
+the archive, and running the following commands:
+
+[source,console]
+----
+$ mkdir -p cilkrts-0.1.2/build
+$ cd cilkrts-0.1.2/build
+$ cmake -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_INSTALL_PREFIX=../install ..
+$ cmake --build . --target install
+----
+
+These commands will install the Cilk header files in
+`cilkrts-0.1.2/install/include` and the Cilk Plus runtime in
+`cilkrts-0.1.2/install/lib`.  You can adjust the installation
+directory by providing a different argument to the
+`-DCMAKE_INSTALL_PREFIX=` flag.
 
 == Publications
 
