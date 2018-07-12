@@ -49,7 +49,7 @@ asciidoctor:
     clangpp: clang++
     tapir-release: 1.0-3
     llvm-base: 5
-    issueTracker: link:https://github.com/wsmoses/Parallel-IR/issues[issue tracker, window="_blank"]
+    issueTracker: link:https://github.com/wsmoses/Tapir-LLVM/issues[issue tracker, window="_blank"]
     underConstruction: image:http://textfiles.com/underconstruction/TokyoPagoda6968UnderConstruct.gif[]
     page-liquid: ''
 
