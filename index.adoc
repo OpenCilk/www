@@ -26,7 +26,7 @@ Cilk multithreaded programming technology.
 // - link:.{{ post.url }}[{{post.date | date: '%B %d, %Y' }} - {{ post.title }}]
 // {% endfor %}
 
-== What is Cilk?
+== What is Cilk?  What is Open Cilk?
 
 Cilk aims to make parallel programming a simple extension of ordinary
 serial programming.  Other concurrency platforms, such as
@@ -34,21 +34,27 @@ link:https://www.threadingbuildingblocks.org/[Intel's Threading
 Building Blocks (TBB)] and link:http://www.openmp.org/[OpenMP], share
 similar goals of making parallel programming easier.  But Cilk sets
 itself apart from other concurrency platforms through its simple
-design and implementation and its powerful suite of provably effective
-tools.  These properties make Cilk well suited as a platform for
-next-generation multicore research.
+link:programming[design] and link:runtime[implementation] and its
+powerful suite of provably effective link:tools[tools].  These
+properties make Cilk well suited as a platform for next-generation
+multicore research.
 
-The Cilk concurrency platform provides the following features:
+Cilk Hub develops and maintains *_Open Cilk_*, an open-source
+implementation of the Cilk concurrency platform.  Open Cilk is largely
+compatible with the link:https://www.cilkplus.org/[Cilk Plus] language
+extension to C and {cpp}; see the link:programming[programming guide]
+for details.  Open Cilk incorporates several enhancements to the Cilk
+platform:
 
-link:programming[Simple language extension]:: Cilk provides a simple
-linguistic extension to the C and {cpp} programming languages that
-allows programmers to parallelize their ordinary serial programs
-easily.
+// link:programming[Simple language extension]:: Cilk provides a simple
+// linguistic extension to the C and {cpp} programming languages that
+// allows programmers to parallelize ordinary serial programs easily.
 
-link:tapir[Compilation with Tapir/LLVM]:: The Tapir/LLVM compiler,
-which is based on link:http://llvm.org/[Clang and LLVM], compiles Cilk
-programs more efficiently than existing compilers for parallel
-programming languages.
+link:tapir[Compilation with Tapir/LLVM]:: Open Cilk compiles Cilk
+programs using the Tapir/LLVM compiler, which is based on
+link:http://llvm.org/[Clang and LLVM] and compiles parallel programs
+more efficiently than existing compilers for parallel programming
+languages.
 
 link:runtime[Provably efficient scheduling]:: The Cilk runtime system
 implements a work-stealing scheduler that is guaranteed to schedule
