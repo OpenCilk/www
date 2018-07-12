@@ -26,6 +26,7 @@ group :jekyll_plugins do
   gem "jekyll-asciidoc"
   gem "pygments.rb"
   gem "jekyll-scholar"
+  gem "unicode_utils"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
