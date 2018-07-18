@@ -18,12 +18,43 @@ instrumentation without modifying the compiler.
 Cilksan is a provably good determinacy-race detector packaged with the
 Tapir/LLVM compiler.  Given a Cilk program and an input -- i.e., a
 regression test -- Cilksan will either certify that the program is
-deterministic or pinpoint the instructions that can cause the program
-to behave nondeterministically.  In other words, Cilksan allows
+deterministic or pinpoint the instructions that can cause lead to
+nondeterministic program behavior.  In other words, Cilksan allows
 programmers to regression-test Cilk programs for deterministic
 behavior.
 
-pass:[{% cite FengLe97 FengLe99 %}]
+Cilksan is designed to be used in a similar fashion as Google's
+Sanitizer tools.  To use the Cilksan determinacy-race detector on your
+program, compile and link the program with the `-fsanitize=cilk`
+compiler flag.
+
+[NOTE]
+====
+You might receive an error about `libclang_rt.cilksan-x86_64.so` when
+running a program compiled with `-fsanitize=cilk` If the Cilksan
+dynamic library is not in your dynamic-library path, e.g.,
+`LD_LIBRARY_PATH` on Linux.  The Cilksan dynamic library is typically
+built or installed with Tapir/LLVM in a subdirectory named
+`lib/clang/<VERSION>/lib/linux`, where `<VERSION>` is the version of
+Clang and LLVM on which Tapir/LLVM is based.  If you receive such an
+error, make sure this path is in your dynamic-library path.
+====
+
+Cilksan implements the SP-bags algorithm pass:[{% cite FengLe97
+FengLe99 %}] to study a Cilk program execution to detect *_determinacy
+races_*, which occur when two logically parallel executed instructions
+access the same memory location and at least one of those instructions
+is a write.  Conceptually, determinacy races are more primitive than
+*_data races_*, which occur when the instructions involved in a
+determinacy race hold no locks in common.  The SP-bags algorithm
+executes a Cilk program serially and identifies logically parallel
+instructions based on the parallel control flow implemented by Cilk's
+keywords for fork-join parallelism.  The SP-bags algorithm detects
+determinacy races in time latexmath:[O(T_1\alpha(v,v))] time, where
+latexmath:[T_1] is the time to run the Cilk program on one processor,
+latexmath:[v] is the number of shared-memory locations, and
+latexmath:[\alpha] is Tarjan's functional inverse of Ackermann's
+function.
 
 == The Cilkscale scalability analyzer
 
