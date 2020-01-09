@@ -151,11 +151,6 @@ libraries:
 
 - CMake, version 3.4.3 or newer, and a {cpp} compiler that supports
   {cpp}11, are needed to build Tapir/LLVM.
-- The link:https://github.com/google/snappy[Snappy]
-  compression/decompression library is needed to build and run
-  Cilksan.  Many platforms provide a package for installing Snappy,
-  e.g., `libsnappy-dev` on Ubuntu, `snappy-devel` on Fedora, or `brew
-  install snappy` on Mac OS X.
 - link:https://www.gnu.org/software/binutils/[Binutils] is needed to
   use link-time optimization (LTO).  Many platforms provide a package
   for to install binutils, e.g., `binutils-dev` on Ubuntu, or
