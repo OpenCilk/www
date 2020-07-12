@@ -1,23 +1,23 @@
 // -*- mode: adoc -*-
-= Cilk Hub
+= OpenCilk
 // To compile this document to html5, run `asciidoc -b html5 index.txt`.
 // Web page meta data.
 :keywords: Cilk, Reducers, Cilksan, Cilkprof, Tapir, multicore, +
            parallel programing
-:description: Cilk Hub seeks to provide quality open-source +
+:description: OpenCilk seeks to provide quality open-source +
               parallel-programming software and support services for +
               the benefit of application programmers and +
               computer-science researchers.
 :page-layout: frontpage
 
-Welcome to Cilk Hub!  Here you can find recent developments with the
+Welcome to OpenCilk!  Here you can find recent developments with the
 Cilk multithreaded programming technology.
 
 // As Moore's Law comes to an end, and with it the near-automatic
 // increases in computer performance provided by semiconductor
 // fabrication technology, obtaining program performance from software
 // will become increasingly important.  By developing the Cilk
-// technology, Cilk Hub aims to position Cilk as an effective open-source
+// technology, OpenCilk aims to position Cilk as an effective open-source
 // platform for next-generation multicore research.
 
 // == News
@@ -26,7 +26,7 @@ Cilk multithreaded programming technology.
 // - link:.{{ post.url }}[{{post.date | date: '%B %d, %Y' }} - {{ post.title }}]
 // {% endfor %}
 
-== What is Cilk?  What is Open Cilk?
+== What is Cilk?  What is OpenCilk?
 
 Cilk aims to make parallel programming a simple extension of ordinary
 serial programming.  Other concurrency platforms, such as
@@ -39,18 +39,18 @@ powerful suite of provably effective link:tools[tools].  These
 properties make Cilk well suited as a platform for next-generation
 multicore research.
 
-Cilk Hub develops and maintains *_Open Cilk_*, an open-source
-implementation of the Cilk concurrency platform.  Open Cilk is largely
+OpenCilk develops and maintains *_OpenCilk_*, an open-source
+implementation of the Cilk concurrency platform.  OpenCilk is largely
 compatible with the link:https://www.cilkplus.org/[Cilk Plus] language
 extension to C and {cpp}; see the link:programming[programming guide]
-for details.  Open Cilk incorporates several enhancements to the Cilk
+for details.  OpenCilk incorporates several enhancements to the Cilk
 platform:
 
 // link:programming[Simple language extension]:: Cilk provides a simple
 // linguistic extension to the C and {cpp} programming languages that
 // allows programmers to parallelize ordinary serial programs easily.
 
-link:tapir[Compilation with Tapir/LLVM]:: Open Cilk compiles Cilk
+link:tapir[Compilation with Tapir/LLVM]:: OpenCilk compiles Cilk
 programs using the Tapir/LLVM compiler, which is based on
 link:http://llvm.org/[Clang and LLVM] and compiles parallel programs
 more efficiently than existing compilers for parallel programming

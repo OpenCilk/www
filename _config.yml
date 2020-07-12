@@ -13,9 +13,9 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Cilk Hub
-email: cilk@mit.edu
-description: 'Cilk Hub seeks to provide quality open-source parallel-programming software and support services for the benefit of application programmers and computer-science researchers.'
+title: OpenCilk
+email: contact@opencilk.org
+description: 'OpenCilk seeks to provide quality open-source parallel-programming software and support services for the benefit of application programmers and computer-science researchers.'
 baseurl: '' # the subpath of your site, e.g. /blog
 url: http://cilk.mit.edu # the base hostname & protocol for your site, e.g. http://example.com
 
@@ -25,7 +25,7 @@ markdown: kramdown
 # theme: minimal-mistakes-jekyll
 highlighter: pygments
 permalink: pretty
-plugins:
+plugins_dir:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-last-modified-at
@@ -45,6 +45,7 @@ asciidoctor:
     icons: font
     safe: ''
     xrefstyle: short
+# XXX check the following five lines
     cilkpp: Cilk++
     clangpp: clang++
     tapir-release: 1.0-3
@@ -92,7 +93,7 @@ defaults:
       show_meta: true 	# Hide metadata for all pages
       sidebar: right   		# Possible values › left, right › by default there will be no sidebar
       comments: false
-      author: CilkHub     # Default author for pages
+      author: OpenCilk     # Default author for pages
       header: title
   -
     scope:

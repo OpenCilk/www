@@ -22,3 +22,11 @@ publish: all
 	echo "scp -r $(LOCAL_SITE)/* $(WEBDIR)/"; \
 	scp -r $(LOCAL_SITE)/* $(WEBDIR)/; \
 	fi
+
+xpublish:
+	@if [ ! -d $(WEBDIR) ]; \
+	then echo "ERROR: Unable to publish webpage to $(WEBDIR)"; \
+	else \
+	echo "scp -r $(LOCAL_SITE)/* $(WEBDIR)/"; \
+	scp -r $(LOCAL_SITE)/* $(WEBDIR)/; \
+	fi
