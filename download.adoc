@@ -6,8 +6,12 @@ compiler and the Cheetah runtime library.  This version has
 been tested on x86-64 systems running recent distributions of Linux,
 including Ubuntu 18.04 and Fedora 30.
 
-We are still putting the finishing touches on this release.  If you
-would like to be a beta-tester, please contact us at contact@opencilk.org
+There are binary releases for two common systems (Linux/Ubuntu 18 and Mac OS) at
+link:https://github.com/OpenCilk/opencilk-project/releases/tag/opencilk/beta2[OpenCilk Binary Releases]
+
+If you want to build from source, our welcome message and build instructions are here:
+link:https://github.com/OpenCilk/infrastructure/blob/release/README[OpenCilk Build Instructions]
+link:https://github.com/OpenCilk/infrastructure/blob/release/INSTALLING[OpenCilk Installation Instructions]
 
 The Tapir/LLVM compiler is the newest compiler that supports Cilk.
 Tapir/LLVM extends LLVM and Clang with support for the Cilk keywords,

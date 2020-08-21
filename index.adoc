@@ -13,6 +13,8 @@
 Welcome to OpenCilk!  Here you can find recent developments with the
 Cilk multithreaded programming technology.
 
+== OpenCilk 1.0 coming soon!
+
 // As Moore's Law comes to an end, and with it the near-automatic
 // increases in computer performance provided by semiconductor
 // fabrication technology, obtaining program performance from software
