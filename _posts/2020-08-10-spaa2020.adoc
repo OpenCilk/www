@@ -29,3 +29,4 @@ The first half of the tutorial overviews the OpenCilk project, provides a look u
  +
 Slides from that presentation are available link:/beta2/opencilk.spaa.2020.pdf[here].
 
+The video of the tutorial is available link:https://www.youtube.com/watch?v=a6LMdpHKW34[here].
