@@ -17,7 +17,7 @@ title: OpenCilk
 email: contact@opencilk.org
 description: 'OpenCilk seeks to provide quality open-source parallel-programming software and support services for the benefit of application programmers and computer-science researchers.'
 baseurl: '' # the subpath of your site, e.g. /blog
-url: http://cilk.mit.edu # the base hostname & protocol for your site, e.g. http://example.com
+url: https://cilk.mit.edu # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 markdown: kramdown
