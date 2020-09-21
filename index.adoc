@@ -154,5 +154,4 @@ Document your suggestion as a new issue on our {issueTracker}.
 Have a question about Cilk?  Want to keep up to date on the latest
 Cilk technology?  Found a bug?  Have a suggestion?  Let us know!
 
-- link:sub.html[Sign up, window="_blank"] to receive updates.
 - Report bugs and make suggestions through bugs@opencilk.org
