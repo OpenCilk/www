@@ -7,7 +7,9 @@ been tested on x86-64 systems running recent distributions of Linux,
 including Ubuntu 18.04 and Fedora 30.
 
 There are binary releases for two common systems (Linux/Ubuntu 18 and Mac OS) at
-link:https://github.com/OpenCilk/opencilk-project/releases/tag/opencilk/beta2[OpenCilk Binary Releases]
+link:https://github.com/OpenCilk/opencilk-project/releases/tag/opencilk/beta3[OpenCilk Binary Releases]
+
+A docker image is now available as well.
 
 If you want to build from source, our welcome message and build instructions are here:
 link:https://github.com/OpenCilk/infrastructure/blob/release/README[OpenCilk Build Instructions]
