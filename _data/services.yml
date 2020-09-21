@@ -1,16 +1,8 @@
 - menu_name: "Services"
 
-- name: "Contact"
-  url: "/contact/"
-  title: "Contact"
-
-- name: "RSS"
-  url: "/feed.xml"
-  title: "Subscribe to RSS Feed"
-
-- name: "Atom"
-  url: "/atom.xml"
-  title: "Subscribe to Atom Feed"
+- name: "Accessibility"
+  url: "http://accessibility.mit.edu"
+  title: "Accessibility"
 
 - name: "sitemap.xml"
   url: "/sitemap.xml"
