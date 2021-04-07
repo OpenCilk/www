@@ -1,0 +1,43 @@
+---
+breadcrumb: true
+tags:
+  - opencilk
+---
+
+= OpenCilk 
+:page-layout: page
+:page-subheadline: OpenCilk Release 1.0
+:page-teaser: OpenCilk Release 1.0
+:page-categories: opencilk
+:date: 2020-03-01
+
+The OpenCilk team has released the OpenCilk Release 1.0.
+
+Features include
+
+- A docker image --- for convenient usage on multiple platforms
+
+- Improved CSI performance
+
+- Improved Cilksan support for reducers
+
+- Reducers can now be declared at global scope
+
+- Null runtime
+
+- Reducers
+
+- C++ Exceptions
+
+- Cilkscale (scalability analyzer)
+
+- Cilksan (race detector)
+
+- Cheetah-based runtime
+
+- Tapir/LLVM-based compiler
+
+We have released binaries for Linux and MacOS and a docker image.  We are also making the source available.
+
+Please see our link:/download[Download page] for more information.
+
