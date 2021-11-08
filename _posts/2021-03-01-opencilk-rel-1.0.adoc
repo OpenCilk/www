@@ -15,23 +15,17 @@ The OpenCilk team has released the OpenCilk Release 1.0.
 
 Features include
 
-- A docker image --- for convenient usage on multiple platforms
+- Support for standard Cilk keywords in C and C++: cilk_spawn, cilk_sync, and cilk_for
 
-- Improved CSI performance
+- Reducer Hyperobjects 
 
-- Improved Cilksan support for reducers
-
-- Reducers can now be declared at global scope
-
-- Null runtime
-
-- Reducers
-
-- C++ Exceptions
+- Prototype support for C++ Exceptions
 
 - Cilkscale (scalability analyzer)
 
 - Cilksan (race detector)
+
+- Experimental support for pedigrees and built-in deterministic parallel random-number generation
 
 - Cheetah-based runtime
 
