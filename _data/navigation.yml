@@ -24,6 +24,10 @@
   - title: Cilk tools
     url: "/tools/"
 
+- title: Documentation
+  url: "/documentation/"
+  side: left
+
 - title: Publications
   url: "/publications/"
   side: left
