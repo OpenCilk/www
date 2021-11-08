@@ -1,0 +1,5 @@
+// -*- mode: adoc -*-
+= OpenCilk Documentation
+
+== link:../docs/OpenCilkLanguageExtensionSpecification.htm[OpenCilk Language Specification]
+
