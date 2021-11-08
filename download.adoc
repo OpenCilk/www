@@ -3,17 +3,16 @@
 
 The latest version of the Cilk system consists of the Tapir/LLVM
 compiler and the Cheetah runtime library.  This version has
-been tested on x86-64 systems running recent distributions of Linux,
-including Ubuntu 18.04 and Fedora 30.
+been tested on x86-64 systems running recent distributions of Linux:
+Ubuntu 18.04 and 20.04, FreeBSD 13, Fedora 32, and Mac OS X 10.15 and 11.2
 
 There are binary releases for two common systems (Linux/Ubuntu 18 and Mac OS) at
-link:https://github.com/OpenCilk/opencilk-project/releases/tag/opencilk/beta3[OpenCilk Binary Releases]
+link:https://github.com/OpenCilk/opencilk-project/releases/tag/opencilk/v1.0[OpenCilk Binary Releases]
 
 A docker image is now available as well.
 
 If you want to build from source, our welcome message and build instructions are here:
-link:https://github.com/OpenCilk/infrastructure/blob/release/README[OpenCilk Build Instructions]
-link:https://github.com/OpenCilk/infrastructure/blob/release/INSTALLING[OpenCilk Installation Instructions]
+link:https://github.com/OpenCilk/infrastructure/#readme[OpenCilk README + Build Instructions]
 
 The Tapir/LLVM compiler is the newest compiler that supports Cilk.
 Tapir/LLVM extends LLVM and Clang with support for the Cilk keywords,
@@ -26,7 +25,7 @@ determinacy-race detector, which is guaranteed to find a race if one
 exists or certify the absence of races in a program execution.
 
 The current release of the Tapir/LLVM compiler 
-is based on version 9.0 of LLVM and Clang.
+is based on version 10.0 of LLVM and Clang.
 
 
 == Publications

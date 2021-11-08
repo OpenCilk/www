@@ -13,7 +13,11 @@
 Welcome to OpenCilk!  Here you can find recent developments with the
 Cilk multithreaded programming technology.
 
-== OpenCilk 1.0 coming soon!
+== link:https://opencilk.org/pact21/program.html[PACT 21 Tutorial]
+Monday Sep 26 3pm EDT +
+link:https://opencilk.org/pact21/program.html[How to Parallelize Your Own Langauge Using OpenCilk Components] +
+
+== link:https://github.com/OpenCilk/infrastructure/#readme[OpenCilk 1.0 has been released!]
 
 == link:http://www.opencilk.org/PostdocFlyer.pdf[Postdoc Positions Available!]
 
