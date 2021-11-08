@@ -1,0 +1,74 @@
+PACT Tutorial Proposal
+Tao B. Schardl, MIT
+I-Ting Angelina Lee, WUSTL
+ 
+TITLE
+How to Parallelize Your Own Language Using OpenCilk Components
+ABSTRACT
+OpenCilk is a new open-source platform to support task-parallel programming in C/C++, aimed primarily at researchers and teachers of parallel computing.  OpenCilk provides a full-featured implementation of Cilk, including a compiler based on the award-winning Tapir/LLVM and a streamlined runtime system based on Cheetah, as well as integrated tools, including the Cilksan race detector and the Cilkscale scalability analyzer.  OpenCilk features a componentized design that makes it easy for compiler writers to add parallelism to their own languages, experiment with new runtime systems, and create custom dynamic-analysis tools for parallel productivity.  
+The first half of the tutorial overviews the OpenCilk project.  It provides details about the OpenCilk architecture, specifically its componentized design that allows individual components to be repurposed by researchers and developers.  The second half of the tutorial is a hands-on session.  Participants use OpenCilk components to add parallelism to Kaleidoscope, a toy language that the LLVM project uses to introduce people to LLVM.  They debug and analyze their addition using OpenCilk productivity tools.
+OBJECTIVES
+By attending this tutorial, participants will gain an understanding of the OpenCilk approach to parallel programming, the components used to achieve this parallelism in C/C++, and how to use these components to incorporate parallelism into other languages.
+OUTLINE
+Introduction
+What is OpenCilk?
+	Basics of recursive fork-join parallel programming
+Cilk keywords: cilk_spawn, cilk_sync, cilk_for
+The serial-projection property
+Cilk scheduling
+	Debugging race conditions
+Determinacy races
+Finding races using Cilksan
+	What is parallelism?
+Work, span, and parallelism
+Measuring parallel scalability using Cilkscale
+OpenCilk components
+	OpenCilk compiler middle-end
+Tapir representation of recursive fork-join parallelism
+Compiler pipeline with Tapir
+Optimizations on Tapir
+	OpenCilk compiler front-end
+Cilk/Clang support for Cilk parallel constructs
+Lowering to Tapir intermediate representation
+Cheetah runtime system
+Randomized work stealing
+The work-first principle
+	Productivity tools: Cilksan and Cilkscale
+Compiler instrumentation
+Runtime components
+Hands-on session: Adding fork-join parallelism to Kaleidoscope 
+	Participants engage in hands-on exercises to:
+add recursive fork-join parallel constructs to Kaleidoscope using the OpenCilk compiler and runtime, and
+debug and analyze the addition using OpenCilk productivity tools.
+PREREQUISITE KNOWLEDGE
+Familiarity with LLVM compiler fundamentals (e.g., lexing and parsing, control-flow graphs, SSA form); interest in parallel programming
+SPECIAL REQUIREMENTS
+None  
+PRINCIPAL PRESENTERS
+Tao B. Schardl, MIT  Director and Chief Architect of OpenCilk Project
+Tao B. (TB) Schardl is a Research Scientist in the MIT Computer Science and Artificial Intelligence Laboratory (CSAIL).  His research draws from algorithms and systems to develop technologies that support principled, scientific approaches to writing fast code. Towards this goal, his work has spanned programming models, theories of performance, diagnostic tools, and compiler technology, and parallel applications.  Much, though not all, of his current research is focused on Tapir/LLVM, a compiler that enables LLVM to effectively optimize task-parallel programs with only minimal modifications to its codebase.  
+I-Ting Angelina Lee, WUSTL  Director and Runtime Architect of OpenCilk Project
+Angelina Lee is an assistant professor in the Computer Science and Engineering department in Washington University in St. Louis.  Her research agenda is to make parallel programming accessible for everyone, so that every programmer, particularly the non-experts, can rapidly develop high performance software that takes advantage of commodity multicore hardware. To that end, she is interested in many aspects of parallel computing, including designing programming models and linguistic constructs to simplify parallel programming, developing runtime and operating system support to enable multithreaded programs to execute efficiently, and building software tools to aid debugging and performance engineering of multithreaded code.
+OTHER PERSONNEL
+Dorothy Curtis, MIT  Project Manager for OpenCilk Project
+Dorothy Curtis is a Research Scientist at MIT's Computer Science and Artificial Intelligence  Laboratory.  At the beginning of her career at CSAIL,  the Programming Methodology Group, Dorothy invented a portable compiler for CLU and then worked on Argus, a platform for distributed systems.   She further developed  the Theta compiler for the object-oriented language used in the Thor database. 
+Charles E. Leiserson, MIT  Director of OpenCilk Project
+Charles E. Leiserson is Professor of Computer Science and Engineering at MIT. He holds the position of Edwin Sibley Webster Professor in MIT's Department of Electrical Engineering and Computer Science (EECS). He was selected as a Margaret MacVicar Faculty Fellow, the highest recognition at MIT for undergraduate teaching. He is a member of MIT's Computer Science and Artificial Intelligence Laboratory (CSAIL), a member of the Lab's Theory of Computation Group (TOC), and head of the Lab's Supertech Research Group.  Professor Leiserson is a Fellow of four professional societies: ACM, AAAS, SIAM, and IEEE.
+Others
+The hands-on session will also be supported by 46 OpenCilk developers, postdocs, and graduate students.
+DURATION
+Half day
+EXPECTED NUMBER OF PARTICIPANTS
+20-50
+MAXIMUM NUMBER OF PARTICIPANTS
+No anticipated limit.
+PAST WORKSHOP ON A RELATED TOPIC
+Title: Research and Teaching with OpenCilk
+Location:  ACM Symposium on Parallelism in Algorithms and Architectures
+Date: July 14, 2020
+Attendees: about 50
+The content of the proposed PACT workshop has been tested at MIT with about a dozen participants, mostly graduate students.
+SUPPORT ACKNOWLEDGMENT
+OpenCilk is supported in part by the National Science Foundation, under grant number CCRI-1925609, and in part by the USAF-MIT AI Accelerator, which is sponsored by United States Air Force Research Laboratory under Cooperative Agreement Number FA8750-19-2-1000.
+Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and should not be interpreted as representing the official policies or views, either expressed or implied, of the United states Air Force, the U.S. Government, or the National Science Foundation. The U.S. Government is authorized to reproduce and distribute reprints for Government purposes notwithstanding any copyright notation herein.
+

@@ -1,0 +1,45 @@
+Docker Clues
+
+<pre>
+
+
+Known good platforms: ubuntu 20.04, ubuntu 18.04
+
+Get the docker package (s) (see https://docs.docker.com/get-docker/)
+Install docker
+
+Add user to docker group in /etc/group
+Check groups : should see docker  (may have to logout and login again!)
+
+mkdir a directory
+get the image
+get the script
+
+initial pass:
+cd directory
+./docker.sh init
+
+nth pass:
+./docker.sh run
+
+NOTE: You might see an error message like this, when you type
+	./docker.sh run
+
+    docker run -it -u=1000:1000 --name opencilk --rm -v /home/xxx/cilk/mtest/tutorial:/tutorial pact2021tutorial:20210927
+    groups: cannot find name for group ID 1000
+    I have no name!@ef590f4b3de6:/$ 
+
+PLEASE IGNORE THIS ERROR 
+
+cd /tutorial
+
+Editting
+ 	- maybe edit inside docker image?  YMMV
+	- maybe exit from docker image; edit; ./docker.sh run
+	- maybe have an extra window:
+		cd directory
+		do editting
+
+To exit a docker session started by "./docker.sh run" type
+	exit
+</pre>

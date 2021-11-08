@@ -1,0 +1,105 @@
+<html>
+<header>
+</header>
+<body>
+<center>
+<h1>How to Parallelize Your Own Language Using OpenCilk Components</h1>
+<p>
+PACT 2021 Tutorial<p>
+Tao B. Schardl, MIT<br>
+I-Ting Angelina Lee, WUSTL
+</center>
+<p>
+<ul style="list-style-type:none;">
+<li><b>Please note:</b><br>
+<ul style="list-style-type:none;">
+<!--
+<li><a href=https://mit.zoom.us/meeting/register/tJEuduCvpjkjHtX2-h11iJjjPQyFfmZ_4dwc><font color=red><b>Zoom Invitation Link</font></a>
+-->
+<li><b>Times are Eastern Daylight Time (EDT)</b><br>
+<li><b>To participate in the hands-on exercises, you will need to use <a href=https://docs.docker.com/get-docker/>docker</a>.
+<li><b><a href=docker-pact2021tutorial-20210927.tar.gz>Docker image for hands-on sections</a> (800MB).</b><br>
+<li><b><a href=docker.sh>Docker script for launching and running the docker image.</a>.</b><br>
+<li><b><a href=docker.clues.html>Docker clues</a>.</b><br>
+<li><b><a href=https://join.slack.com/t/opencilk/shared_invite/zt-vrptfole-ONPbMlmdP~YyZ4nQg4734Q>Slack channel for questions</a>.</b><br>
+<li><b><a href=opencilk-pact-2021.pdf>Slides</a>.</b><br>
+<li><b><a href=https://people.csail.mit.edu/dcurtis/cilk/pact21/zoom_1.mp4 target="_blank">Video</a>.</b><br>
+</ul>
+</ul>
+<ul style="list-style-type:none;">
+<li><b>3:00 PM - Introduction</b><br>
+<ul style="list-style-type:none;">
+<li> Hands-on: download docker image
+</ul>
+<ul style="list-style-type:none;">
+<li> &nbsp;
+</ul>
+<li><b>3:15 PM - What is OpenCilk?</b><br>
+<ul style="list-style-type:none;">
+<li>	Basics of recursive fork-join parallel programming<br>
+<ul>
+<li>Cilk keywords: cilk_spawn, cilk_sync, cilk_for<br>
+<li>The serial-projection property<br>
+<li>Cilk scheduling<br>
+</ul>
+<li>Cilk programming hands-on exercise
+<li>	Debugging race conditions<br>
+<ul>
+<li>Determinacy races<br>
+<li>Finding races using Cilksan<br>
+</ul>
+<li>	What is parallelism?<br>
+<ul>
+<li>Work, span, and parallelism<br>
+<li>Measuring parallel scalability using Cilkscale
+</ul>
+<li> Hands-on exercise using OpenCilk 
+</ul>
+</ul>
+<ul style="list-style-type:none;">
+<li><font color=blue> <b>4:15 PM - Break</b></font>
+</ul>
+<ul style="list-style-type:none;">
+<li><b>4:30 PM - OpenCilk Runtime and Compiler Components</b><br>
+<ul style="list-style-type:none;">
+
+<li>Cheetah runtime system<br>
+<ul>
+<li>Work stealing and the work-first principle<br>
+<li>Organization of the runtime<br>
+</ul>
+<li>Cheetah Hands-On Exercise<br>
+<li>OpenCilk compiler middle-end<br>
+<ul>
+<li>Tapir representation of recursive fork-join parallelism<br>
+<li>Compiler pipeline with Tapir<br>
+<li>Optimizations on Tapir<br>
+</ul>
+<li>Middle-end Hands-On Exercise<br>
+</ul>
+</ul>
+<ul style="list-style-type:none;">
+<li><font color=blue> <b>6:10 PM - Break</b></font>
+</ul>
+</ul>
+<ul style="list-style-type:none;">
+<li><b>6:25 PM - Tools</b> <br>
+<ul style="list-style-type:none;">
+<li> Productivity tools: Cilksan and Cilkscale<br>
+<ul>
+<li>Compiler instrumentation<br>
+<li>Runtime components<br>
+</ul>
+<li>Productivity Tools: Hands-On Exercise<br>
+</ul>
+</ul>
+<ul style="list-style-type:none;">
+<p>
+</ul>
+<ul style="list-style-type:none;">
+<li><font color=blue> <b>7:00 PM - The End</b></font>
+</ul>
+PREREQUISITE KNOWLEDGE<br>
+Familiarity with LLVM compiler fundamentals; interest in parallel programming<br>
+<br>
+</body>
